@@ -12,6 +12,7 @@ block content
                 = project.done
                 = project.start
                 = project.end
+                = project.members
                 = project._id
                 form(action='/projects/#{project._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
                     input(type='hidden',value='DELETE',name='_method')

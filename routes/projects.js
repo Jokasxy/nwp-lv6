@@ -52,6 +52,7 @@ router.route('/')
         var done = req.body.done;
         var start = req.body.start;
         var end = req.body.end;
+        var members = req.body.members;
         //call the create function for our database
         mongoose.model('Project').create({
             name : name,
@@ -59,7 +60,8 @@ router.route('/')
             price : price,
             done : done,
             start: start,
-            end : end
+            end : end,
+            members: members
         }, function (err, project) {
               if (err) {
                   res.send("There was a problem adding the information to the database.");
@@ -181,6 +183,7 @@ router.route('/:id/edit')
         var done = req.body.done;
         var start = req.body.start;
         var end = req.body.end;
+        var members = req.body.members;
 
 	    //find the document by ID
 	    mongoose.model('Project').findById(req.id, function (err, project) {
@@ -191,7 +194,8 @@ router.route('/:id/edit')
                 price : price, 
                 done : done,
                 start: start,
-                end : end
+                end : end,
+                members: members
 	        }, function (err, projectID) {
 	          if (err) {
 	              res.send("There was a problem updating the information to the database: " + err);

@@ -16,6 +16,8 @@ block content
 			input#inputStart(type='date', value='#{project.start}', name='start')
 		p End:
 			input#inputEnd(type='date', value='#{project.end}', name='end')
+		p Members: 
+			input#inputMembers(type='text', value='#{project.members}', name='members')
 		p
 			input(type='hidden',value='PUT',name='_method')
 		p
